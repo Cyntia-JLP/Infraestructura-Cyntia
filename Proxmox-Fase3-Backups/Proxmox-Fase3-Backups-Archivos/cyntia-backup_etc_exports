@@ -1,0 +1,10 @@
+# /etc/exports — cyntia-backup (nodo secundario)
+# Exportación NFS del directorio de backups hacia el nodo principal
+#
+# Opciones:
+#   rw              — lectura y escritura
+#   sync            — confirma escrituras solo tras flush a disco (más seguro)
+#   no_subtree_check — mejora rendimiento y fiabilidad
+#   no_root_squash  — root de cyntia tiene permisos root (necesario para vzdump)
+
+/var/lib/vz/dump 192.168.3.100(rw,sync,no_subtree_check,no_root_squash)

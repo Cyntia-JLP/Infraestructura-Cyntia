@@ -1,0 +1,7 @@
+# /etc/docker/daemon.json — dentro de lxc-soc-core (LXC 101)
+# Configuración mínima necesaria para que Docker funcione
+# dentro de un contenedor LXC no privilegiado con AppArmor en el kernel del host
+
+{
+  "no-new-privileges": false
+}

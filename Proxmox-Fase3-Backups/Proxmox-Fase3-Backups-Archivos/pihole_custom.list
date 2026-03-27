@@ -1,0 +1,8 @@
+# /etc/pihole/custom.list — dentro de lxc-pihole (LXC 100)
+# Registros DNS personalizados para el dominio interno cyntia.local
+# PiHole v6 usa este fichero para resolución de nombres locales
+
+192.168.20.2 pihole.cyntia.local
+192.168.20.3 soc.cyntia.local
+192.168.20.3 grafana.cyntia.local
+192.168.50.2 app.cyntia.local

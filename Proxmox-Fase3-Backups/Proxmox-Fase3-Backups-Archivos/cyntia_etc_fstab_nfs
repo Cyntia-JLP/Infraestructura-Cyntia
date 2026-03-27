@@ -1,0 +1,7 @@
+# /etc/fstab — cyntia (nodo principal)
+# Solo se muestra la línea añadida para el mount NFS de backups
+# El resto del fichero es la configuración estándar de Proxmox
+
+# Mount NFS permanente hacia cyntia-backup para backups vzdump y BorgBackup
+# _netdev: espera a que la red esté activa antes de montar
+192.168.3.101:/var/lib/vz/dump /mnt/backup-nfs nfs defaults,_netdev 0 0
