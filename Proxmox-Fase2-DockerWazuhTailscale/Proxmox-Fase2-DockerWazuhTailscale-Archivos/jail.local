@@ -1,0 +1,12 @@
+[DEFAULT]
+bantime = 1h
+findtime = 10m
+maxretry = 5
+
+[sshd]
+enabled = true
+port = ssh
+# Usar backend systemd porque Debian/Proxmox no tiene /var/log/auth.log
+# sino que usa journald para los logs del sistema
+backend = systemd
+maxretry = 3

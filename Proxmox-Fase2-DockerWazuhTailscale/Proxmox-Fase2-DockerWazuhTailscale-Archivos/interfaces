@@ -1,0 +1,29 @@
+auto lo
+iface lo inet loopback
+
+auto enp3s0
+iface enp3s0 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+        address 192.168.3.100/24
+        gateway 192.168.3.1
+        bridge-ports enp3s0
+        bridge-stp off
+        bridge-fd 0
+        bridge-vlan-aware yes
+
+# DMZ - 192.168.50.0/24
+auto vmbr0.50
+iface vmbr0.50 inet static
+        address 192.168.50.1/24
+
+# VLAN 10 - Producción (Windows AD)
+auto vmbr0.10
+iface vmbr0.10 inet static
+        address 192.168.10.1/24
+
+# VLAN 20 - SOC
+auto vmbr0.20
+iface vmbr0.20 inet static
+        address 192.168.20.1/24

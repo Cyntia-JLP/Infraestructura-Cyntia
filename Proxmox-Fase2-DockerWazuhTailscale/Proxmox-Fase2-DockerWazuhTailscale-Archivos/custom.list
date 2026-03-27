@@ -1,0 +1,8 @@
+# Registros DNS internos del dominio cyntia.local
+# Gestionados por PiHole FTL v6
+# Este fichero define los dominios internos del proyecto
+
+192.168.20.2 pihole.cyntia.local
+192.168.20.3 soc.cyntia.local
+192.168.20.3 grafana.cyntia.local
+192.168.50.2 app.cyntia.local
