@@ -2,6 +2,8 @@
 
 **Infraestructura fase 4: Windows Server 2022 y Active Directory**
 
+---
+
 ## 1. Punto de partida
 
 La VM `vm-windows-ad` (VMID 200) ya existía en Proxmox con Windows Server 2022 Standard instalado. La verificamos desde el host:
