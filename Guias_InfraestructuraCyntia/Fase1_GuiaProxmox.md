@@ -1,4 +1,6 @@
-# **Infraestructura base: Proxmox, VLANs, nftables, Tailscale, fail2ban, LXC, Windows Server y PiHole**
+# Guía Proxmox - Fase 3
+
+**Infraestructura base: Proxmox, VLANs, nftables, Tailscale, fail2ban, LXC, Windows Server y PiHole**
 
 ---
 
