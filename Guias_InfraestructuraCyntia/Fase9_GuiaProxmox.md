@@ -2,6 +2,8 @@
 
 **Infraestructura fase 9: Migración Windows AD a OpenLDAP + LAM**
 
+---
+
 ## Por qué migramos de Windows Server a OpenLDAP
 
 Windows Server 2022 consumía 2GB de RAM fijos en un sistema con 8GB totales. OpenLDAP consume únicamente 200-300MB, libera recursos críticos y encaja perfectamente con el stack Linux. Los playbooks de respuesta automática son más simples sin PowerShell.
