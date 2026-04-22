@@ -1,6 +1,6 @@
 # Guía Proxmox - Fase 7
 
-**Grafana + Prometheus: Monitorización de Infraestructura**
+**Infraestructura fase 7: Grafana + Prometheus: Monitorización de Infraestructura**
 
 ---
 
