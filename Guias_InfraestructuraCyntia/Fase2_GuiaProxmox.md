@@ -1,4 +1,6 @@
-# **Infraestructura fase 2: Docker, host OpenSearch, certificados SSL, LXC Docker, stack Wazuh, Tailscale, acceso dashboard Wazuh**
+# Guía Proxmox - Fase 2
+
+**Infraestructura fase 2: Docker, host OpenSearch, certificados SSL, LXC Docker, stack Wazuh, Tailscale, acceso dashboard Wazuh**
 
 ---
 
