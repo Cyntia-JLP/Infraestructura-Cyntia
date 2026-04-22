@@ -1,7 +1,0 @@
-# Crontab de root — cyntia (nodo principal)
-# Archivo: /var/spool/cron/crontabs/root
-# Ver con: crontab -l
-# Editar con: crontab -e
-
-# Backup BorgBackup granular cada noche a las 2:00 AM
-0 2 * * * /usr/local/bin/cyntia-backup.sh
