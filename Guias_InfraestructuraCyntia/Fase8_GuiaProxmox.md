@@ -2,6 +2,8 @@
 
 **Infraestructura fase 8: Estabilización, Optimización y Diagnóstico del Sistema**
 
+---
+
 ## Introducción
 
 Una vez desplegado el stack completo (Wazuh, Suricata, OpenCanary, Grafana, Prometheus, cluster Proxmox), el siguiente paso crítico es **estabilizar el sistema**: garantizar que todos los servicios arrancan correctamente tras un reinicio, que los recursos están bien repartidos, y que disponemos de herramientas para diagnosticar problemas rápidamente.
