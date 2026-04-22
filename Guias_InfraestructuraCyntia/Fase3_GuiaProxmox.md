@@ -1,6 +1,6 @@
 # Guía Proxmox - Fase 3
 
-**Sistema de Backups y Cluster Proxmox**
+**Infraestructura fase 3: Sistema de Backups y Cluster Proxmox**
 
 ---
 
