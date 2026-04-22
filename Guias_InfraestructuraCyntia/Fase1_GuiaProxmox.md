@@ -2,8 +2,6 @@
 
 **Infraestructura base: Proxmox, VLANs, nftables, Tailscale, fail2ban, LXC, Windows Server y PiHole**
 
----
-
 ## 1. Proxmox VE 8 - Configuración inicial
 
 Proxmox VE 8 es el hipervisor base del proyecto, instalado directamente sobre el hardware físico. Una vez instalado, lo primero es ajustar la IP a la red del taller y reparar el servicio de cluster para tener acceso a la WebUI.
