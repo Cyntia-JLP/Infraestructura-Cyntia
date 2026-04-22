@@ -27,7 +27,7 @@
 export PATH=$PATH:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Passphrase del repositorio BorgBackup (cifrado AES-256)
-export BORG_PASSPHRASE='Cyntia#B0rg$2026'
+export BORG_PASSPHRASE='-'
 
 REPO=/mnt/backup-nfs/borg          # Repositorio BorgBackup en nodo secundario
 DATE=$(date +%Y-%m-%d)             # Fecha del backup (YYYY-MM-DD)
