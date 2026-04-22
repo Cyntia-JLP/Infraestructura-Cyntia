@@ -2,6 +2,8 @@
 
 **Infraestructura fase 2: Docker, host OpenSearch, certificados SSL, LXC Docker, stack Wazuh, Tailscale, acceso dashboard Wazuh**
 
+---
+
 ## 1. Verificación del estado de la fase 1
 
 Antes de comenzar cualquier trabajo nuevo, verificamos que toda la infraestructura desplegada en la Semana 1 sigue operativa. Esto nos garantiza una base estable antes de añadir nuevas capas.
