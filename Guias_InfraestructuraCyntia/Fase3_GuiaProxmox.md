@@ -2,8 +2,6 @@
 
 **Sistema de Backups y Cluster Proxmox**
 
----
-
 ## 1. Preparación del segundo nodo
 
 El segundo PC (PC 18) se configuró como nodo de backup del cluster. Se instaló Proxmox VE 8.2.2 desde USB con la siguiente configuración:
