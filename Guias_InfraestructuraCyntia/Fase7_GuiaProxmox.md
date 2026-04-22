@@ -2,6 +2,8 @@
 
 **Grafana + Prometheus: Monitorización de Infraestructura**
 
+---
+
 ## 1. Contexto y objetivos
 
 Grafana y Prometheus son los dos componentes encargados de la **monitorización de infraestructura** en Cyntia. Mientras que Wazuh se ocupa de los eventos de seguridad, Grafana y Prometheus cubren las métricas del sistema: CPU, RAM, disco y red de cada contenedor y máquina.
