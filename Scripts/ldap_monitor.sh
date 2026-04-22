@@ -28,7 +28,7 @@
 
 LDAP_HOST="192.168.10.2"                          # IP de lxc-ldap (VLAN10)
 LDAP_ADMIN="cn=admin,dc=cyntia,dc=local"          # Usuario administrador LDAP
-LDAP_PASS='LDAP$$C7n74#&&'                        # Contraseña admin LDAP
+LDAP_PASS='-'                        # Contraseña admin LDAP
 LDAP_BASE="dc=cyntia,dc=local"                    # Base DN del directorio
 MEDTRANS_BASE="ou=MedTrans,dc=cyntia,dc=local"    # OU raíz del cliente
 DISABLED_GROUP="cn=disabled,ou=grupos,dc=cyntia,dc=local"  # Grupo de usuarios bloqueados
@@ -90,7 +90,7 @@ fi
 
 ldapsearch -x -H ldap://$LDAP_HOST \
   -D "uid=wazuh-reader,ou=servicios,dc=cyntia,dc=local" \
-  -w 'W4zuh@LD4P$2026!' \
+  -w '-' \
   -b "$LDAP_BASE" "(objectClass=*)" dn \
   > /dev/null 2>&1
 
