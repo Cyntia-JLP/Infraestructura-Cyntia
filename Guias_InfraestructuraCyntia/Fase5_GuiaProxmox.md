@@ -2,6 +2,8 @@
 
 **Suricata IDS: Instalación, Configuración e Integración con Wazuh**
 
+---
+
 ## Introducción
 
 Suricata es el sistema de detección de intrusiones de red (IDS) del proyecto Cyntia. Su función es analizar **en tiempo real todo el tráfico** que circula entre las zonas de red (DMZ, VLAN 10, VLAN 20) buscando patrones de ataque conocidos mediante firmas.
