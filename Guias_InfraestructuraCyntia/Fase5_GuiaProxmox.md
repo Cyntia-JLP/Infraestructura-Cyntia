@@ -1,6 +1,6 @@
 # Guía Proxmox - Fase 5
 
-**Suricata IDS: Instalación, Configuración e Integración con Wazuh**
+**Infraestructura fase 5: Suricata IDS: Instalación, Configuración e Integración con Wazuh**
 
 ---
 
