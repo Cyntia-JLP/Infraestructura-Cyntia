@@ -1,6 +1,6 @@
 # Guía Proxmox - Fase 6
 
-**OpenCanary + Wazuh: Honeypot integrado en el SOC Cyntia**
+**Infraestructura fase 6: OpenCanary + Wazuh: Honeypot integrado en el SOC Cyntia**
 
 ---
 
