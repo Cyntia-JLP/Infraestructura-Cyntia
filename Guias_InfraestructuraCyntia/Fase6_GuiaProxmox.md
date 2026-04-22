@@ -2,6 +2,8 @@
 
 **OpenCanary + Wazuh: Honeypot integrado en el SOC Cyntia**
 
+---
+
 ## 1. Contexto y objetivos
 
 ### ¿Qué es un honeypot?
