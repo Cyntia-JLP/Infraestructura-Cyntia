@@ -1,0 +1,24 @@
+#!/bin/bash
+# LIMPIEZA POST-DEMO — Restaurar estado inicial
+
+echo "Limpiando..."
+
+# Reactivar todos los usuarios LDAP
+pct exec 101 -- docker exec single-node-wazuh.manager-1 bash -c "
+for u in agarcia rlopez lsanchez cnavarro mfernandez pmoreno ijimenez jmartinez; do
+    python3 /var/ossec/active-response/bin/disable_ldap_user.py --enable \$u 2>/dev/null || true
+done
+"
+
+# Limpiar IPs bloqueadas
+nft flush set inet filter blocked_ips
+
+# Verificar
+sleep 5
+echo "=== ESTADO FINAL ==="
+pct exec 201 -- ldapsearch -x -H ldap://localhost \
+  -D 'cn=admin,dc=cyntia,dc=local' -w 'LDAP$$C7n74#&&' \
+  -b 'ou=MedTrans,dc=cyntia,dc=local' \
+  '(loginShell=/bin/bash)' uid 2>/dev/null | grep -c '^uid:'
+curl -s http://192.168.20.3:9300/metrics | grep -E 'users_active|users_disabled|blocked_ips_total'
+echo "Listo."

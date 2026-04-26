@@ -1,0 +1,25 @@
+#!/bin/bash
+# DEMO CYNTIA SOC — Ejecutar cada comando uno a uno durante la presentación
+
+WAZUH="pct exec 101 -- docker exec single-node-wazuh.manager-1 bash -c"
+
+echo "=== PASO 1: Detección SSH en honeypot ==="
+$WAZUH "echo '{\"version\":1,\"command\":\"add\",\"parameters\":{\"alert\":{\"rule\":{\"id\":\"100201\",\"level\":14,\"description\":\"Conexion SSH al honeypot\"},\"agent\":{\"id\":\"003\",\"name\":\"lxc-honeypot\"},\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%S)\",\"data\":{\"src_host\":\"192.168.10.2\",\"dst_host\":\"192.168.10.4\",\"dst_port\":\"2222\",\"srcip\":\"185.220.101.1\"}}}}' | python3 /var/ossec/active-response/bin/notify_telegram.py"
+
+sleep 3
+echo "=== PASO 2: Bloqueo de IP ==="
+$WAZUH "echo '{\"version\":1,\"command\":\"add\",\"parameters\":{\"alert\":{\"rule\":{\"id\":\"100201\",\"level\":14,\"description\":\"Conexion SSH al honeypot\"},\"agent\":{\"name\":\"lxc-honeypot\"},\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%S)\",\"data\":{\"srcip\":\"185.220.101.1\"}}}}' | python3 /var/ossec/active-response/bin/block_ip.py"
+
+sleep 3
+echo "=== PASO 3: Threat Intelligence ==="
+$WAZUH "echo '{\"version\":1,\"command\":\"add\",\"parameters\":{\"alert\":{\"rule\":{\"id\":\"100201\",\"level\":14,\"description\":\"Conexion SSH al honeypot\"},\"agent\":{\"name\":\"lxc-honeypot\"},\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%S)\",\"data\":{\"srcip\":\"185.220.101.1\"}}}}' | python3 /var/ossec/active-response/bin/threat_intel.py"
+
+sleep 3
+echo "=== PASO 4: Deshabilitar usuario LDAP ==="
+$WAZUH "echo '{\"version\":1,\"command\":\"add\",\"parameters\":{\"alert\":{\"rule\":{\"id\":\"100202\",\"level\":15,\"description\":\"Intento de login SSH con credenciales en honeypot\"},\"agent\":{\"name\":\"lxc-ldap\"},\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%S)\",\"data\":{\"srcip\":\"192.168.10.2\",\"dstuser\":\"agarcia\"}}}}' | python3 /var/ossec/active-response/bin/disable_ldap_user.py"
+
+sleep 3
+echo "=== PASO 5: Crear ticket ==="
+$WAZUH "echo '{\"version\":1,\"command\":\"add\",\"parameters\":{\"alert\":{\"rule\":{\"id\":\"100203\",\"level\":15,\"description\":\"LOGIN SSH COMPLETADO EN HONEYPOT\"},\"agent\":{\"id\":\"003\",\"name\":\"lxc-honeypot\"},\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%S)\",\"data\":{\"srcip\":\"185.220.101.1\",\"src_host\":\"185.220.101.1\"}}}}' | python3 /var/ossec/active-response/bin/create_ticket.py"
+
+echo "=== DEMO COMPLETADA ==="
