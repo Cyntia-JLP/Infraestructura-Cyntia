@@ -75,3 +75,8 @@ sleep 120       # El dashboard necesita ~2min para cargar plugins y conectar
 # dependencias de orden entre sí.
 
 pct exec 101 -- bash -c "cd /opt/cyntia-monitoring && docker compose up -d"
+
+# Instalar dependencias para playbooks Cyntia en contenedor Wazuh
+
+sleep 30
+pct exec 101 -- docker exec single-node-wazuh.manager-1 /usr/bin/dnf install -y socat openldap-clients > /dev/null 2>&1 || true
